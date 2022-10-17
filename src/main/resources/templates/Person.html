@@ -1,0 +1,26 @@
+<!--orders.html file-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Person</title>
+</head>
+<body>
+<form method="post" th:action="@{/createPerson}" th:object="${personForm}">
+  <label>
+    Person name:
+    <input type="text" th:field="*{firstName}">
+  </label>
+
+  <label>
+    Age:
+    <input type="number" th:field="*{age}">
+    <!--<ul th:if="${#fields.hasErrors('amount')}">
+      <li th:each="err : ${#fields.errors('amount')}" th:text="${err}">_Input is incorrect</li>
+    </ul>
+      -->
+  </label>
+  <button type="submit">SEND DATA</button>
+</form>
+</body>
+</html>
